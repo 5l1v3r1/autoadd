@@ -10,7 +10,7 @@ new_usr = sys.argv[1]
 new_passwd = sys.argv[2]
 to = sys.argv[3]
 
-user = 'mail@leonvoerman.nl'
+user = 'mail@example.nl'
 passwd = getpass.getpass('Password: ')
 #passwd = '<Your_Password>'
 
@@ -31,7 +31,7 @@ If you have any questions, please send them to mail@leonvoerman.nl.
 Kind regards,
 
 Administrator
-Leon Voerman
+Leon V.
 
 --------------------------------------------------------------------
 
