@@ -124,7 +124,6 @@ function del_usr_file {
 function menu {
 	echo ""
 	echo -e "\e[33m		####### Version: 2.0 #######\e[0m"
-	echo -e "\e[33m		####### By Leon Voerman #######\e[0m"
 	echo ""
 	_menu_items=("Add users in file" "Add users with mailing" "Delete users in file" "Quit")
 	select menu in "${_menu_items[@]}"
