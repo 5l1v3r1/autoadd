@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# Recommended to use a dummy mail account that redirects the Email because the password must be given in plain-text.
 
 import os, smtplib, getpass, sys, fileinput
 
@@ -12,7 +13,7 @@ to = sys.argv[3]
 
 user = 'mail@example.nl'
 passwd = getpass.getpass('Password: ')
-#passwd = '<Your_Password>'
+#passwd = '<YOUR PASSWORD>'
 
 body = '''
 Dear %s,
@@ -26,7 +27,7 @@ Password: %s
 Do not share these details with anyone else.
 We recommand you to change your password the first time you login.
 
-If you have any questions, please send them to mail@leonvoerman.nl.
+If you have any questions, please send them to mail@example.com.
 
 Kind regards,
 
@@ -40,8 +41,9 @@ This message was send with a beta python script.
 If you received invalid information, please contact us so we send you the correct details manually.
 ''' % (new_usr, new_usr, new_passwd)
 
+# REMOVE "<>" AND INSERT SMTP DETAILS
 try:
-    server = smtplib.SMTP('smtp02.hostnet.nl','587')
+    server = smtplib.SMTP('<SMTP_SERVER>','<SMTP_PORT>')
     server.ehlo()
     server.starttls()
     server.login(user,passwd)
