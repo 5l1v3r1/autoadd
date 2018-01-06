@@ -77,8 +77,8 @@ function mailing {
 	printf 'Username list location: '; read _location
 
 	filename=$_location
-	filelines=`cut -d':' -f1 $filename` # only usernames
-	_emailz=`cut -d':' -f2 $filename` # <<-- With a Z, so leet!
+	filelines=`cut -d',' -f1 $filename` # only usernames
+	_emailz=`cut -d',' -f2 $filename` # <<-- With a Z, so leet!
 	_counter="1"
 	_total="1"
 	_p="p" # <<-- Yes, I know.. (It's a workaround)
@@ -112,7 +112,7 @@ function del_usr_file {
 
 	# Delete users
 	filename=$_location
-	filelines=`cut -d':' -f1 $filename` # only usernames
+	filelines=`cut -d',' -f1 $filename` # only usernames
 	for line in $filelines ; do
 		userdel $line; echo -e "\e[1;35m[ - ]\e[0m $line"; rm -rf /home/$line; rm /home/passwords/$line
 	done
@@ -124,6 +124,7 @@ function del_usr_file {
 function menu {
 	echo ""
 	echo -e "\e[33m		####### Version: 2.0 #######\e[0m"
+	echo -e "\e[33m		####### By Leon Voerman #######\e[0m"
 	echo ""
 	_menu_items=("Add users in file" "Add users with mailing" "Delete users in file" "Quit")
 	select menu in "${_menu_items[@]}"
