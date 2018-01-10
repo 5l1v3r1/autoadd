@@ -1,3 +1,5 @@
+![alt text](http://leonvoerman.nl/coding/autoadd.png)
+
 # autoadd
 Auto add users to the server and mail them the details.
 
